@@ -6,24 +6,24 @@ r = requests.get('https://openapi.etsy.com/v2/listings/trending?api_key=uyvwtl04
 #decoded = json.loads(r.text)
 decoded = json.loads(r.text)
 keywords = []
+wordlist = []
+wordfreq = []
 
 for item in decoded['results']:
     #print "Title of listing", item['title']
     for mytags in item['tags']:
-        #print mytags
+        #make lowercase and add to keywords list
         keywords.append(mytags.lower())
-
-#Make all lowercase
-#lowerwords = [words.lower() for words in keywords]
-
-        #print json.dumps(mytags, sort_keys=True, indent=4, separators=(',', ': '))
+#change unicode to ASCII. also .encode("ascii", "ignore") is to force removal of
+#of the BOM unicode stuff.
+wordlist = [str(unicodes.encode("ascii", "ignore")) for unicodes in keywords]
 
 #print json.dumps(decoded['results'], sort_keys=True, indent=4, separators=(',', ': '))
 
-#change unicode to ASCII. also .encode("ascii", "ignore") is to force removal of
-#of the BOM unicode stuff.
-keywords = [str(unicodes.encode("ascii", "ignore")) for unicodes in keywords]
-print keywords
+def makeDict (wordlist):
+    wordfreq = [wordlist.count(p) for p in wordlist]
+    mydict = dict(zip(wordlist,wordfreq))
+    return mydict
+        #count our tags and add them to wordfreq then make a dict.
 
-for word in keywords:
-    print word
+print makeDict(wordlist)
