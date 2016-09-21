@@ -24,9 +24,12 @@ def makeDict (wordlist):
     wordfreq = [wordlist.count(p) for p in wordlist]
     mydict = dict(zip(wordlist,wordfreq))
     #sorteddict = sorted(mydict.keys())
-    list = []
-    for key, value in sorted(mydict.iteritems(), key=lambda (k, v): (v, k), reverse=True):
-        list.append("Count:", value, "Keyword:", key)
-    return list
 
-print makeDict(wordlist)
+    for k, v in mydict.iteritems():
+        list = sorted(mydict.values(), reverse=True)
+    print list
+
+        #list.append("Count:", value, "Keyword:", key)
+    #return list
+
+makeDict(wordlist)
