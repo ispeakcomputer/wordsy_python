@@ -23,7 +23,8 @@ wordlist = [str(unicodes.encode("ascii", "ignore")) for unicodes in keywords]
 def makeDict (wordlist):
     wordfreq = [wordlist.count(p) for p in wordlist]
     mydict = dict(zip(wordlist,wordfreq))
-    return mydict
+    sorteddict = sorted(mydict.keys())
+    return [value for key, value in sorteddict]
         #count our tags and add them to wordfreq then make a dict.
 
 print makeDict(wordlist)

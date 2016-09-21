@@ -1,7 +1,7 @@
 import requests
 import json
 
-r = requests.get('https://openapi.etsy.com/v2/listings/trending?api_key=uyvwtl04yi98duy546afittr&page=1')
+r = requests.get('https://openapi.etsy.com/v2/listings/trending?api_key=uyvwtl04yi98duy546afittr&category_name=jewelry&page=1')
 print "Response Code:", r.status_code
 
 decoded = json.loads(r.text)
