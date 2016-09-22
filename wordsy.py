@@ -1,15 +1,10 @@
 import requests
 import json
 
-keywords = []
-wordlist = []
-iterkeywords = []
-
-
 def gettrendingresponse():
     r = requests.get('https://openapi.etsy.com/v2/listings/trending?api_key=uyvwtl04yi98duy546afittr&limit=50')
     #print "Response Code:", r.status_code
-    #decoded = json.loads(r.text)
+    iterkeywords = []
     keywords = json.loads(r.text)
     for item in keywords['results']:
         #print "Title of listing", item['title']
@@ -22,6 +17,7 @@ def killunicode(iw):
 
     #change unicode to ASCII. also .encode("ascii", "ignore") is to force removal of
     #of the BOM unicode stuff.
+    wordlist = []
     wordlist = [str(unicodes.encode("ascii", "ignore")) for unicodes in iw]
     printdict(wordlist)
 
