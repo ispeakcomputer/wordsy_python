@@ -21,14 +21,12 @@ def killunicode(iw):
     wordlist = [str(unicodes.encode("ascii", "ignore")) for unicodes in iw]
     printdict(wordlist)
 
-    #print json.dumps(decoded['results'], sort_keys=True, indent=4, separators=(',', ': '))
-
 def printdict(wl):
     #count phrase freq
     wordfreq = [wl.count(p) for p in wl]
     #make the finished dict to print from
     mydict = dict(zip(wl,wordfreq))
-
+    #make our list
     for key, value in sorted(mydict.iteritems(), key=lambda (k,v): (v,k), reverse=True):
         if value == 1:
             pass
