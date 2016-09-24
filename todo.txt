@@ -1,0 +1,5 @@
+1.) Add plot graphs for listing prices spread
+2.) Keyword lookup to check low/high engagement and competition
+3.) store data for trending data requests inside a database to chart over course of a week.
+4.) Building daily trending lists keyword freq email
+5.) find long tail keywords for better separators
