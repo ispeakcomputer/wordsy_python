@@ -1,6 +1,6 @@
 #Wordsy - Track Trending Etsy Listings Most Frequent Tags
 
-Using Python and Etsy API this script is used to check trending listings and their keywords, It calculates the highest keyword frequencies and displays them from most frequent. Can be used to give Etsy shop owners idea of the most trending SEO metrics on Etsy.
+This program is used to check trending listings and their tags on Etsy.  It calculates the highest tag keyword frequencies and displays them from most frequent. This program can be used to give Etsy shop owners an idea of the most frequent trending SEO metrics on Etsy.
 
 #Motivation
 
@@ -15,3 +15,7 @@ Download and navigate into the scripts directory and then run python wordsy.py
 json
 
 requests
+
+#Ideas For Future Development
+
+Pull data not just from the Max listings allowed by Etsy ,but use their "offset" to cycle through the max of 500 listings to give a better idea of less poplular "Niche Trends" that could still tranlate into sells for shop owner. 
