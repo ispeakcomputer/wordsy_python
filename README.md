@@ -1,19 +1,17 @@
 #Wordsy - Track Trending Etsy Listings Most Frequent Tags
 
-This program was built in order to track UFO sightings on Twitter and load them into a HTML file which refreshes every so often. It is more or less a exercise in making a simple web app without any frameworks and seeing constant streams of information from Twitter. The app rewrites the Twitter search data to the HTML file and a HTML meta tag refreshes the browser. It could use better detection using Twitters geo location information. I noticed after building the app that I did see "sightings" though I had to research myself to see if they where in the same location .
+Using Python and Etsy API this script is used to check trending listings and their keywords, It calculates the highest keyword frequencies and displays them from most frequent. Can be used to give Etsy shop owners idea of the most trending SEO metrics on Etsy.
 
 #Motivation
 
-This app was built in pursuit of tracking communications of a businesses competitors on Twitter using different search terms. The idea is about finding dissatisfied customers and customers in the discovery phase that are calling on the competitor business using their @handle .Even those asking about another companies services publicly could be potential customers. Unlike on Twitter this feed is constant and you can do much more with the data.
+I wanted to build a script that could easily run and show you the most freqent tags for Etsy's Trending Listings. This way shop owners could have an idea of when they need to start SEO for a new season or for trends the market demands. Direct market metrics to give definite timelines for SEO changes could help a shop owner stay on top of their SEO game. 
 
 #How To Run
 
-Download and navigate into the scripts directory and then run python twit.py
+Download and navigate into the scripts directory and then run python wordsy.py
 
 #Modules
 
 json
 
-subprocess
-
-mylogins.py
+requests
