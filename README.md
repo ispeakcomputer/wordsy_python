@@ -1,6 +1,6 @@
 #Wordsy - Track Trending Etsy Listings Most Frequent Tags
 
-This program is used to check trending listings and their tags on Etsy.  It calculates the highest tag keyword frequencies and displays them from most frequent. This program can be used to give Etsy shop owners an idea of the most frequent trending SEO metrics on Etsy.
+This program is used to check trending listings and their tags on Etsy.  It calculates the tag keyword frequencies and displays them from most frequent. This program can be used to give Etsy shop owners an idea of the most frequent trending SEO metrics on Etsy.
 
 #Motivation
 
