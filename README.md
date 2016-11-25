@@ -4,11 +4,11 @@ This program is used to check trending listings and their tags on Etsy.  It calc
 
 #Motivation
 
-I wanted to build a script that could easily run and show you the most freqent tags for Etsy's Trending Listings. This way shop owners could have an idea of when they need to start SEO for a new season or for trends the market demands. Direct market metrics to give definite timelines for SEO changes could help a shop owner stay on top of their SEO game. 
+I wanted to build a application that could easily run and show you the most freqent tags for Etsy's Trending Listings. This way shop owners could have an idea of when they need to start SEO for a new season or for trends the market demands. Direct market metrics to give definite timelines for SEO changes could help a shop owner stay on top of their SEO game. 
 
 #How To Run
 
-Download and navigate into the scripts directory and then run python wordsy.py
+Download and navigate into the scripts directory and then run python wordsy.py. You will need to use your own API Keys. You can get these at Etsy.
 
 #Modules
 
@@ -18,4 +18,4 @@ requests
 
 #Ideas For Future Development
 
-Pull data not just from the Max listings allowed by Etsy ,but use their "offset" to cycle through the max of 500 listings to give a better idea of less poplular "Niche Trends" that could still tranlate into sells for shop owner. 
+Pull data not just from the Max listings allowed by Etsy ,but use their "offset" to cycle through the max of 500 listings to give a better idea of less poplular "Niche Trends" that could still tranlate into sells for a shop owner. 
