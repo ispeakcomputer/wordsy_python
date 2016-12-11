@@ -16,6 +16,3 @@ json
 
 requests
 
-#Ideas For Future Development
-
-Pull data not just from the Max listings allowed by Etsy ,but use their "offset" to cycle through the max of 500 listings to give a better idea of less poplular "Niche Trends" that could still tranlate into sells for a shop owner. 
