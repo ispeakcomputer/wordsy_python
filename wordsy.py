@@ -1,39 +1,44 @@
 import requests
 import json
 
-def gettrendingresponse():
-    r = requests.get('https://openapi.etsy.com/v2/listings/trending?api_key=uyvwtl04yi98duy546afittr&limit=50')
-    #print "Response Code:", r.status_code
-    iterkeywords = []
-    keywords = json.loads(r.text)
-    for item in keywords['results']:
-        #print "Title of listing", item['title']
-        for mytags in item['tags']:
-            #make lowercase and add to keywords list
-            iterkeywords.append(mytags.lower())
-    killunicode(iterkeywords)
+class Etsy:
+    def gettrendingresponse(self):
+        r = requests.get('https://openapi.etsy.com/v2/listings/trending?api_key=uyvwtl04yi98duy546afittr&limit=50')
+        #print "Response Code:", r.status_code
+        iterkeywords = []
+        keywords = json.loads(r.text)
+        for item in keywords['results']:
+            #print "Title of listing", item['title']
+            for mytags in item['tags']:
+                #make lowercase and add to keywords list
+                iterkeywords.append(mytags.lower())
+        return iterkeywords
 
-def killunicode(iw):
+class Words:
+    def killunicode(self, iw):
 
-    #change unicode to ASCII. also .encode("ascii", "ignore") is to force removal of
-    #of the BOM unicode stuff.
-    wordlist = []
-    wordlist = [str(unicodes.encode("ascii", "ignore")) for unicodes in iw]
-    printdict(wordlist)
+        #change unicode to ASCII. also .encode("ascii", "ignore") is to force removal of
+        #of the BOM unicode stuff.
+        wordlist = []
+        wordlist = [str(unicodes.encode("ascii", "ignore")) for unicodes in iw]
+        return wordlist
 
-def printdict(wl):
-    #count phrase freq
-    wordfreq = [wl.count(p) for p in wl]
-    #make the finished dict to print from
-    mydict = dict(zip(wl,wordfreq))
-    #make our list
-    for key, value in sorted(mydict.iteritems(), key=lambda (k,v): (v,k), reverse=True):
-        if value == 1:
-            pass
-        else:
-            print key, "Freq", value
+    def printdict(self, wl):
+        #count phrase freq
+        wordfreq = [wl.count(p) for p in wl]
+        #make the finished dict to print from
+        mydict = dict(zip(wl,wordfreq))
+        #make our list
+        for key, value in sorted(mydict.iteritems(), key=lambda (k,v): (v,k), reverse=True):
+            if value == 1:
+                pass
+            else:
+                print key, "Freq", value
 
-def main():
-    gettrendingresponse()
+if __name__ == '__main__':
+    keywords = Etsy()
+    ourwords = Words()
 
-main()
+    ourkeywords = keywords.gettrendingresponse()
+    cleanwords = ourwords.killunicode(ourkeywords)
+    ourwords.printdict(cleanwords)
