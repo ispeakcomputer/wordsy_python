@@ -32,7 +32,7 @@ class Words:
         mydict = dict(zip(wl,wordfreq))
         #make our list
         for key, value in sorted(mydict.iteritems(), key=lambda (k,v): (v,k), reverse=True):
-            if value <= 2:
+            if value <= 1:
                 pass
             else:
                 print key, "Freq", value
