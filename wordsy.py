@@ -3,7 +3,7 @@ import json
 
 class Etsy:
     def gettrendingresponse(self):
-        r = requests.get('https://openapi.etsy.com/v2/listings/trending?api_key=uyvwtl04yi98duy546afittr&limit=250')
+        r = requests.get('https://openapi.etsy.com/v2/listings/trending?api_key=<APIKEY_HERE>&limit=250')
         iterkeywords = []
         keywords = json.loads(r.text)
 
